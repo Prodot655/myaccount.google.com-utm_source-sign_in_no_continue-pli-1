@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+        header{
+            width: 100%;
+            min-height: 100vh;
+            max-width: auto;
+            display: flex;
+            align-items: center;
+            
+            justify-content: center;
+        }
+        .form{
+            width: 500px;
+            height: auto;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            align-items: center;
+            justify-content: center;
+        }
+        .form .input_box{
+            width: 100%;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0px 7px;
+            border: 2px solid orangered;
+            border-radius: 7px;
+        }
+        .form .input_box_2{
+            margin: 15px 0px 0px 0px;
+            padding-left: 0%;
+        }
+        .form .input_box input{
+            width: 100%;
+            height: 100%;
+            outline: none;
+            border: none;
+        }
+        .form .input_box input::placeholder{
+            font-family: "Roboto","Arial",sans-serif;
+            font-size: 15px;
+        }
+        .form .input_box_2 .button_n{
+            width: 50px;
+            height: 90%;
+            display: flex;
+            align-items: center;
+            font-family: "Roboto","Arial",sans-serif;
+            font-weight: bold;
+            justify-content: center;
+            
+        }
+        .form .input_box_2 input{
+            height:60%;
+            border-left: 3px solid rgba(66, 62, 62, 0.212);
+            padding-left: 7px;
+            
+        }
+        .login_width{
+            width: 100%;
+            display: flex;
+            color: red;
+            font-weight: bolder;
+            font-size:15px;
+            margin: 15px 0px 0px 0px;
+            text-shadow: 0px 0px 4px red;
+            font-family: "Roboto","Arial",sans-serif;
+        }
+        .valid_number{
+            width: 100%;
+            padding: 5px;
+            font-family: "Roboto","Arial",sans-serif;
+            color: red;
+            font-size: 15px;
+            text-shadow: 0px 0px 1px red;
+            background-color: rgba(238, 255, 0, 0.425);
+        }
+        .terms{
+            width: 100%;
+            color: rgb(145, 136, 136);
+            font-weight: bolder;
+            font-size:15px;
+            padding: 4px 0px 0px 0px;
+            font-family: "Roboto","Arial",sans-serif;
+        }
+        .terms a{
+            color: orangered;
+        }
+        .submit{
+            margin: 6px 0px 0px 0px;
+            width: 100%;
+            height: 55px;
+            outline: none;
+            border: none;
+            background-color: orangered;
+            border-radius: 7px;
+            font-family: "Roboto","Arial",sans-serif;
+            color: white;
+            font-weight: bolder;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .submit:active{
+            background-color: rgb(180, 49, 2);
+        }
+        .students{
+            width: 100%;
+            justify-content: center;
+            display: flex;
+            text-align: center;
+            margin: 10px 10px 0px 0px;
+            align-items: center;
+            color: rgb(145, 136, 136);
+            font-weight: bolder;
+            font-size:15px;
+            padding: 4px 0px 0px 0px;
+            font-family: "Roboto","Arial",sans-serif;
+        }
+        .input_box_3{
+            margin: 15px 0px 0px 0px;
+        }
+        .class_college{
+            width: 100%;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            align-items: center;
+            
+            margin-top: 15px;
+        }
+        .Classes{
+            width: 100%;
+            height: 100%;
+            color: rgb(145, 136, 136);
+            font-weight: bolder;
+            font-size:18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 0px 0px 0px;
+            font-family: "Roboto","Arial",sans-serif;
+        }        
+        .clas_container{
+            width:35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:50%;
+            margin: 0%;
+            color: rgb(145, 136, 136);
+            font-weight: bolder;
+            font-size:18px;
+            padding: 0px 0px 0px 3px;
+            border-left: 2px solid black;
+            font-family: "Roboto","Arial",sans-serif;
+        }
+    </style>
+    <title>Login form</title>
+</head>
+<body>
+    <header>
+        <form action="" method="post" name="google-sheet" class="form" autocomplete="off">
+            <div class="input_box">
+                <input type="text" id="name" placeholder="To continue, Enter your name" name="Name" required value="">
+            </div>
+            <p class="login_width" id="login_width" style="display: none;">
+                Login With Phone Number
+            </p>
+            <div class="input_box input_box_2">
+                <a class="button_n">
+                    +91
+                </a>
+                <input type="tel" id="mobile_number" name="Mobile no" placeholder="To continue, Enter your mobile number" required value="">
+            </div>
+            <p class="valid_number" id="valid_no"style="display: none;">
+                Wronge Number, Please enter your valid number
+            </p>
+            <div class="input_box input_box_3">
+                <input type="text" id="Salect_boord" name="Boord" placeholder="Salect your boord" required value="">
+            </div>
+            <div class="class_college">
+                <div class="input_box " style="width: 66.04px; "  id="class_choices">
+                    <input class="Classes" name="Class"  id="inner_classes" value="Class" style="align-items: center; justify-content: center; display: flex;">
+                        
+                    
+                </div>
+                <div class="input_box " style="width: 100%; margin-left: 15px;" >
+                    <input type="text" placeholder="Enter your, School / Inter College" name="School" required value="">
+                </div>
+            </div>
+            <div class="input_box input_box_3">
+                <input type="date" id="name" placeholder="date of birth" name="DOB"  required value="">
+            </div>
+            <div class="input_box input_box_3">
+                <input type="text" id="name" placeholder="Location" name="Location" required value="">
+            </div>
+            <p class="terms">
+                By Contiuing you agree to our<a> T&C </a>and <a>Privacy & Policy.</a>
+            </p>
+            <button class="submit" type="submit" id="submit_btn">
+                Click To Continue
+            </button>
+            <p class="students">
+                5 crore + Students are learning on Apnaa School
+            </p>
+        </form>
+    </header>
+    <style>
+        .pop_page {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0%;
+            left: 0%;
+            background-color: rgba(0, 0, 0, 0.747);
+            display: flex;
+            padding: 10px;
+            align-items: center;
+            justify-content: center;
+            z-index: 99;
+            
+        }
+        #pop_page {
+            display: none;
+        }
+        .pop_page h1{
+            width: 100%;
+            height: auto;
+            padding:5px 0px;
+            text-align: center
+            ;
+            font-size: 25px;
+            display: flex;
+            font-family: "Roboto","Arial",sans-serif;
+            align-items: center;
+            font-weight: bold;
+            text-shadow: 0px 0px 10px black;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .pop_page .page{
+            width:400px;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 30px black;
+            background-color: #fff;
+        }
+        .pop_page .page .box{
+            width: 108px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid black;
+            font-family: "Roboto","Arial",sans-serif;
+            font-weight: bold;
+            border-radius: 7px;
+            cursor: pointer;
+            margin: 3px;
+            transition: 0.2;
+        }
+        .pop_page .page .box:hover{
+            border: 2px solid blueviolet;
+            color: blueviolet;
+            box-shadow: 0px 0px 4px blueviolet;
+            text-shadow: 0px 0px 4px blueviolet;
+        }
+        .pop_page .page .box:active{
+            border: 2px solid blueviolet;
+            color: blueviolet;
+            box-shadow: 0px 0px 4px blueviolet;
+            text-shadow: 0px 0px 4px blueviolet;
+        }
+        #s_c_1:checked ~ #class_1,#s_c_2:checked ~ #class_2,#s_c_3:checked ~ #class_3,#s_c_4:checked ~ #class_4,#s_c_5:checked ~ #class_5,#s_c_6:checked ~ #class_6,#s_c_7:checked ~ #class_7,#s_c_8:checked ~ #class_8,#s_c_9:checked ~ #class_9,#s_c_10:checked ~ #class_10,#s_c_11:checked ~ #class_11,#s_c_12:checked ~ #class_12{
+            border: 2px solid blueviolet;
+            color: blueviolet;
+            box-shadow: 0px 0px 4px blueviolet;
+            text-shadow: 0px 0px 4px blueviolet;
+        }
+    </style>
+    <div class="pop_page" id="pop_page">
+        <div class="page">
+            <h1>Chosse your class</h1>
+            <input type="radio" name="class" id="s_c_1" hidden>
+            <input type="radio" name="class" id="s_c_2" hidden>
+            <input type="radio" name="class" id="s_c_3" hidden>
+            <input type="radio" name="class" id="s_c_4" hidden>
+            <input type="radio" name="class" id="s_c_5" hidden>
+            <input type="radio" name="class" id="s_c_6" hidden>
+            <input type="radio" name="class" id="s_c_7" hidden>
+            <input type="radio" name="class" id="s_c_8" hidden>
+            <input type="radio" name="class" id="s_c_9" hidden>
+            <input type="radio" name="class" id="s_c_10" hidden>
+            <input type="radio" name="class" id="s_c_11" hidden>
+            <input type="radio" name="class" id="s_c_12" hidden>
+            <label for="s_c_1" class="box" id="class_1" onclick="closeclas()">
+                Class 1
+            </label>
+            <label for="s_c_2" class="box" id="class_2" onclick="closeclas()">
+                Class 2
+            </label>
+            <label for="s_c_3" class="box" id="class_3" onclick="closeclas()">
+                Class 3
+            </label>
+            <label for="s_c_4" class="box" id="class_4" onclick="closeclas()">
+                Class 4
+            </label>
+            <label for="s_c_5" class="box" id="class_5" onclick="closeclas()">
+                Class 5
+            </label>
+            <label for="s_c_6" class="box" id="class_6" onclick="closeclas()">
+                Class 6
+            </label>
+            <label for="s_c_7" class="box" id="class_7" onclick="closeclas()">
+                Class 7
+            </label>
+            <label for="s_c_8" class="box" id="class_8" onclick="closeclas()">
+                Class 8
+            </label>
+            <label for="s_c_9" class="box" id="class_9" onclick="closeclas()">
+                Class 9
+            </label>
+            <label for="s_c_10" class="box" id="class_10" onclick="closeclas()">
+                Class 10
+            </label>
+            <label for="s_c_11" class="box" id="class_11" onclick="closeclas()">
+                Class 11
+            </label>
+            <label for="s_c_12" class="box" id="class_12" onclick="closeclas()">
+                Class 12
+            </label>
+            
+        </div>
+    </div>
+    <style>
+        #pop_page_1{
+            display: none;
+        }
+        #b_c_1:checked ~ #boord_1,#b_c_2:checked ~ #boord_2,#s_b_3:checked ~ #boord_3,#b_c_4:checked ~ #boord_4,#b_c_5:checked ~ #boord_5,#b_c_6:checked ~ #boord_6,#b_c_7:checked ~ #boord_7,#b_c_8:checked ~ #boord_8,#b_c_9:checked ~ #boord_9,#b_c_10:checked ~ #boord_10,#b_c_11:checked ~ #boord_11,#b_c_12:checked ~ #boord_12{
+            border: 2px solid blueviolet;
+            color: blueviolet;
+            box-shadow: 0px 0px 4px blueviolet;
+            text-shadow: 0px 0px 4px blueviolet;
+        }
+        #pop_page_1 .page .box{
+            width: 108%;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+    <div class="pop_page" id="pop_page_1">
+        <div class="page">
+            <h1>Chosse your Boord</h1>
+            <input type="radio" name="boord" id="b_c_1" hidden>
+            <input type="radio" name="boord" id="b_c_2" hidden>
+            <input type="radio" name="boord" id="b_c_3" hidden>
+            <input type="radio" name="boord" id="b_c_4" hidden>
+            <input type="radio" name="boord" id="b_c_5" hidden>
+            <input type="radio" name="boord" id="b_c_6" hidden>
+            <input type="radio" name="boord" id="b_c_7" hidden>
+            <input type="radio" name="boord" id="b_c_8" hidden>
+            <input type="radio" name="boord" id="b_c_9" hidden>
+            <input type="radio" name="boord" id="b_c_10" hidden>
+            <input type="radio" name="boord" id="b_c_11" hidden>
+            <input type="radio" name="boord" id="b_c_12" hidden>
+            <label for="b_c_1" class="box" id="boord_1" onclick="closing_page_1()">
+                CBSE Boord
+            </label>
+            <label for="b_c_2" class="box" id="boord_2" onclick="closing_page_1()">
+                UP Boord
+            </label>
+            <label for="b_c_3" class="box" id="boord_3" onclick="closing_page_1()">
+                Bihar Boord
+            </label>
+            <label for="b_c_4" class="box" id="boord_4" onclick="closing_page_1()">
+                Andhar pardesh Boord
+            </label>
+            <label for="b_c_5" class="box" id="boord_5" onclick="closing_page_1()">
+                Chhattis garh Boord
+            </label>
+            <label for="b_c_6" class="box" id="boord_6" onclick="closing_page_1()">
+                Delhi Boord
+            </label>
+            <label for="b_c_7" class="box" id="boord_7" onclick="closing_page_1()">
+                Gujarat Boord
+            </label>
+            <label for="b_c_8" class="box" id="boord_8" onclick="closing_page_1()">
+                ICSE Boord
+            </label>
+            <label for="b_c_9" class="box" id="boord_9" onclick="closing_page_1()">
+                Other Boord
+            </label>
+            
+        </div>
+    </div>
+    <style>
+        #pop_page_2{
+            display: none;
+        }
+        .pop_page .page_2{
+            width: 400px;
+            height: auto;
+            
+            flex-direction: column;
+        }
+        .pop_page .page_2 .students{
+            color: black;
+            font-size: 20px;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+    <div class="pop_page" id="pop_page_2" style="padding: 10px;">
+        <div class="page page_2" id="pop_page_2_page">
+            <img src="Untitled.png" alt="">
+            <p class="students" style="padding: 0px; margin: 0px;">
+                5 crore + Students are learning on Apnaa School
+            </p>
+            <button class="submit" id="join_to_login">
+                Login to Join Them
+            </button>
+        </div>
+    </div>
+    <style>
+        .pop_page_4{
+            background-color: rgb(0, 47, 255);
+            flex-direction: column;
+        }
+        .pop_page_4 img{
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 100%;
+        }
+        .btn_1{
+            background-color: #fff;
+            color: orangered;
+        }
+    </style>
+    <div class="pop_page pop_page_4" id="Continue_page">
+        <img src="https://miamioh.edu/_files/images/news/2019/08/campus.jpg" alt="">
+        <button class="btn_1 submit" id="">
+            Clicl To Continue
+        </button>
+        <img src="https://tools.bard.edu/files/pr/main_news_image.php?id=17178" alt="">
+        
+        <img src="" alt="">
+    </div>
+    <script>
+        let mobile_number=document.getElementById("mobile_number");
+        let submit_btn=document.getElementById("submit_btn");
+        let login_width=document.getElementById("login_width");
+        let valid_no=document.getElementById("valid_no");
+        submit_btn.addEventListener('click',function(){
+            if(mobile_number.value.length>10 || mobile_number.value.length===10){
+                
+            }else{
+                valid_no.style.display="flex";
+                login_width.style.display="flex";
+                setTimeout(() => {
+                    login_width.style.display="none";
+                    valid_no.style.display="none";
+                }, 7000);
+            }
+        });
+        let Salect_boord=document.getElementById("Salect_boord");
+        let pop_page_1=document.getElementById("pop_page_1");
+        Salect_boord.addEventListener('click',function() {
+            pop_page_1.style.display="flex";
+        });
+        function closing_page_1() {
+            pop_page_1.style.display="none";
+        }
+        let boord_1=document.getElementById("boord_1");
+        let boord_2=document.getElementById("boord_2");
+        let boord_3=document.getElementById("boord_3");
+        let boord_4=document.getElementById("boord_4");
+        let boord_5=document.getElementById("boord_5");
+        let boord_6=document.getElementById("boord_6");
+        let boord_7=document.getElementById("boord_7");
+        let boord_8=document.getElementById("boord_8");
+        let boord_9=document.getElementById("boord_9");
+        boord_1.addEventListener('click',function () {
+            Salect_boord.value="CBSE Boord";
+        });
+        boord_2.addEventListener('click',function () {
+            Salect_boord.value="UP Boord";
+        });
+        boord_3.addEventListener('click',function () {
+            Salect_boord.value="Bihar Boord";
+        });
+        boord_4.addEventListener('click',function () {
+            Salect_boord.value="Andhar pardesh Boord";
+        });
+        boord_5.addEventListener('click',function () {
+            Salect_boord.value="Chhattis garh Boord";
+        });
+        boord_6.addEventListener('click',function () {
+            Salect_boord.value="Delhi Boord";
+        });
+        boord_7.addEventListener('click',function () {
+            Salect_boord.value="Gujarat Boord";
+        });
+        boord_8.addEventListener('click',function () {
+            Salect_boord.value="ICSE Boord";
+        });
+        boord_9.addEventListener('click',function () {
+            Salect_boord.value="Other Boord";
+        });
+        let class_choices=document.getElementById("class_choices");
+        let pop_page=document.getElementById("pop_page");
+        let class_1=document.getElementById("class_1");
+        let class_2=document.getElementById("class_2");
+        let class_3=document.getElementById("class_3");
+        let class_4=document.getElementById("class_4");
+        let class_5=document.getElementById("class_5");
+        let class_6=document.getElementById("class_6");
+        let class_7=document.getElementById("class_7");
+        let class_8=document.getElementById("class_8");
+        let class_9=document.getElementById("class_9");
+        let class_10=document.getElementById("class_10");
+        let class_11=document.getElementById("class_11");
+        let class_12=document.getElementById("class_12");
+        let Continue_page=document.getElementById("Continue_page");
+        let join_to_login=document.getElementById("join_to_login");
+        let pop_page_2=document.getElementById("pop_page_2");
+        let inner_classes=document.getElementById("inner_classes");
+        pop_page_2.addEventListener('click',function(){
+            pop_page_2.style.display="none";
+        });
+        
+        class_choices.addEventListener('click',function () {
+            
+            pop_page.style.display="flex";
+        });
+        function closeclas(){
+            pop_page.style.display="none";
+        }
+        class_1.addEventListener('click',function(){
+            inner_classes.value="1";
+        });
+        class_2.addEventListener('click',function(){
+            inner_classes.value="2";
+        });
+        class_3.addEventListener('click',function(){
+            inner_classes.value="3";
+        });
+        class_4.addEventListener('click',function(){
+            inner_classes.value="4";
+        });
+        class_5.addEventListener('click',function(){
+            inner_classes.value="5";
+        });
+        class_6.addEventListener('click',function(){
+            inner_classes.value="6";
+        });
+        class_7.addEventListener('click',function(){
+            inner_classes.value="7";
+        });
+        class_8.addEventListener('click',function(){
+            inner_classes.value="8";
+        });
+        class_9.addEventListener('click',function(){
+            inner_classes.value="9";
+        });
+        class_10.addEventListener('click',function(){
+            inner_classes.value="10";
+        });
+        class_11.addEventListener('click',function(){
+            inner_classes.value="11";
+        });
+        class_12.addEventListener('click',function(){
+            inner_classes.value="12";
+        });
+        Continue_page.addEventListener('click',function(){
+            document.getElementById("Continue_page").style.display="none";
+            setTimeout(function(){
+                pop_page_2.style.display="flex";
+            }, 7000);
+        });
+        join_to_login.addEventListener('click',function () {
+            pop_page_2.style.display="none";
+        })
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz86BrmIpL80Y398jFstmeTwX3L_96G8lbhY5brdgn5pAsSl--9/exec'
+        const form = document.forms['google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
